@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import PrivateRoute from './components/PriviteRoute';
+import Login from "./components/LoginPage"
 
 // import PrivateRoute from './components/PriviteRoute';
 import Header from './components/Header';
