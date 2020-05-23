@@ -27,7 +27,7 @@ const loginSchema = yup.object().shape({
 });
 
 //Registration Validation
-const regiterSchema = yup.object.shape({
+const regiterSchema = yup.object().shape({
 	name: yup.string(),
 	email: yup
 		.string()
@@ -37,28 +37,30 @@ const regiterSchema = yup.object.shape({
 });
 
 // Login default state
-const [loginState, setLoginState] = useState({
-	email: '',
-	password: '',
-});
 
-//Register default State
-const [registerState, setRegisterState] = useState({
-	name: '',
-	email: '',
-	password: '',
-});
-
-//Button disabled until all fields meet schema
-const [loginButtonDisabled, setLoginButtonDisabled] = useState(true);
-
-useEffect(() => {
-	loginSchema.isValid(loginState).then((valid) => {
-		setLoginButtonDisabled(!valid);
-	});
-}, [loginState]);
 
 function Login() {
+
+	const [loginState, setLoginState] = useState({
+		email: '',
+		password: '',
+	});
+	
+	//Register default State
+	const [registerState, setRegisterState] = useState({
+		name: '',
+		email: '',
+		password: '',
+	});
+	
+	//Button disabled until all fields meet schema
+	const [loginButtonDisabled, setLoginButtonDisabled] = useState(true);
+	
+	useEffect(() => {
+		loginSchema.isValid(loginState).then((valid) => {
+			setLoginButtonDisabled(!valid);
+		});
+	}, [loginState]);
 	const classes = useStyles();
 	const { register, handleSubmit, errors } = useForm();
 	const onSubmit = (data) => {
