@@ -39,24 +39,24 @@ import * as yup from 'yup';
 function Login() {
 //   const classes = useStyles();
 //   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => {
-    console.log(data);
-  };
-  // your form submit function which will invoke after successful validation
-  // Login default state
-  const [loginState, setLoginState] = useState({
-    email: '',
-    password: '',
-  });
+//   const onSubmit = data => {
+//     console.log(data);
+//   };
+//   // your form submit function which will invoke after successful validation
+//   // Login default state
+//   const [loginState, setLoginState] = useState({
+//     email: '',
+//     password: '',
+//   });
 
-  //Register default State
-  const [registerState, setRegisterState] = useState({
-    name: '',
-    email: '',
-    password: '',
-  });
-  //Button disabled until all fields meet schema
-  const [loginButtonDisabled, setLoginButtonDisabled] = useState(true);
+//   //Register default State
+//   const [registerState, setRegisterState] = useState({
+//     name: '',
+//     email: '',
+//     password: '',
+//   });
+//   //Button disabled until all fields meet schema
+//   const [loginButtonDisabled, setLoginButtonDisabled] = useState(true);
 
 //   useEffect(() => {
 //     loginSchema.isValid(loginState).then(valid => {
