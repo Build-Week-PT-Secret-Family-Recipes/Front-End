@@ -15,8 +15,8 @@ function App() {
       <h1>Test</h1>
       <div className='routes'>
         <h1>Hello</h1>
-          {/* <Route exact path='/' component={Login} />
-          <Route path='/login' component={Login} /> */}
+          <Route exact path='/' component={Login} />
+          <Route path='/login' component={Login} />
           {/* <PrivateRoute path='/recipe-home' component={} /> */}
     
       </div>
