@@ -14,11 +14,10 @@ function App() {
       </div>
       <h1>Test</h1>
       <div className='routes'>
-        <Switch>
-          <Route path='/login' component={Login} />
           <Route exact path='/' component={Login} />
+          <Route path='/login' component={Login} />
           {/* <PrivateRoute path='/recipe-home' component={} /> */}
-        </Switch>
+    
       </div>
     </div>
   );
