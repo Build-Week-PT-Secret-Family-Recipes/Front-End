@@ -8,36 +8,36 @@ import Tab from '@material-ui/core/Tab';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      width: 200,
-    },
-  },
-}));
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     '& .MuiTextField-root': {
+//       margin: theme.spacing(1),
+//       width: 200,
+//     },
+//   },
+// }));
 
-//Login Validation
-const loginSchema = yup.object().shape({
-  email: yup
-    .string()
-    .email('Must be a Valid email address.')
-    .required('You must include an email address.'),
-  password: yup.string().required('Please enter your password.'),
-});
+// //Login Validation
+// const loginSchema = yup.object().shape({
+//   email: yup
+//     .string()
+//     .email('Must be a Valid email address.')
+//     .required('You must include an email address.'),
+//   password: yup.string().required('Please enter your password.'),
+// });
 
-//Registration Validation
-const regiterSchema = yup.object().shape({
-  name: yup.string(),
-  email: yup
-    .string()
-    .email('Must be a Valid email address.')
-    .required('You must include an email address.'),
-  password: yup.string().required('Please enter a password.'),
-});
+// //Registration Validation
+// const regiterSchema = yup.object().shape({
+//   name: yup.string(),
+//   email: yup
+//     .string()
+//     .email('Must be a Valid email address.')
+//     .required('You must include an email address.'),
+//   password: yup.string().required('Please enter a password.'),
+// });
 
 function Login() {
-  const classes = useStyles();
+//   const classes = useStyles();
 //   const { register, handleSubmit, errors } = useForm();
   const onSubmit = data => {
     console.log(data);
@@ -58,18 +58,16 @@ function Login() {
   //Button disabled until all fields meet schema
   const [loginButtonDisabled, setLoginButtonDisabled] = useState(true);
 
-  useEffect(() => {
-    loginSchema.isValid(loginState).then(valid => {
-      setLoginButtonDisabled(!valid);
-    });
-  }, [loginState]);
+//   useEffect(() => {
+//     loginSchema.isValid(loginState).then(valid => {
+//       setLoginButtonDisabled(!valid);
+//     });
+//   }, [loginState]);
 
   return (
     //container for login element
     <div className='loginContainer'>
       <form
-        className={classes.root}
-        noValidate
         autoComplete='off'
 
       >
