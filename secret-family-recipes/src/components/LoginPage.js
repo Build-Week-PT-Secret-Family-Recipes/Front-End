@@ -72,7 +72,7 @@ function Login() {
         noValidate
         autoComplete='off'
         onSubmit={handleSubmit(onSubmit)}
-      ></form>
+      >
       <div className='LoginFieldEmail'>
         {/* email/UN text field */}
         <TextField
@@ -99,6 +99,7 @@ function Login() {
           Register
         </Button>
       </div>
+	  </form>
     </div>
   );
 }
