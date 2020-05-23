@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
-import Login from './components/LoginPage';
 import './App.css';
 import PrivateRoute from './components/PriviteRoute';
 
