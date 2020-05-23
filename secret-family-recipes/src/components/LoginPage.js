@@ -65,37 +65,38 @@ function Login() {
 //   }, [loginState]);
 
   return (
-    //container for login element
-    <div className='loginContainer'>
-      <form
-        autoComplete='off'
+	//container for login element
+	<h1>Test</h1>
+    // <div className='loginContainer'>
+    //   <form
+    //     autoComplete='off'
 
-      >
-      <div className='LoginFieldEmail'>
-        {/* email/UN text field */}
-        <TextField
-          id='email'
-          label='email'
-          variant='outlined'
+    //   >
+    //   <div className='LoginFieldEmail'>
+    //     {/* email/UN text field */}
+    //     <TextField
+    //       id='email'
+    //       label='email'
+    //       variant='outlined'
 
-        />
-        <div className='LoginFieldEmail'>
-          {/* Password text field */}
-          <TextField id='outlined-basic' label='password' variant='outlined' />
-        </div>
-      </div>
-      <div className='LoginButtons'>
-        {/* Login Button */}
-        <Button variant='contained' color='primary'>
-          Login
-        </Button>
-        {/* Registration Button */}
-        <Button variant='contained' color='primary'>
-          Register
-        </Button>
-      </div>
-	  </form>
-    </div>
+    //     />
+    //     <div className='LoginFieldEmail'>
+    //       {/* Password text field */}
+    //       <TextField id='outlined-basic' label='password' variant='outlined' />
+    //     </div>
+    //   </div>
+    //   <div className='LoginButtons'>
+    //     {/* Login Button */}
+    //     <Button variant='contained' color='primary'>
+    //       Login
+    //     </Button>
+    //     {/* Registration Button */}
+    //     <Button variant='contained' color='primary'>
+    //       Register
+    //     </Button>
+    //   </div>
+	//   </form>
+    // </div>
   );
 }
 
