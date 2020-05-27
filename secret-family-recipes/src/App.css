@@ -1,66 +1,30 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* Styles for Header.js */
+.App {
+	text-align: center;
+}
 
 .nav-bar {
-  height: 10vh;
-  display: flex;
-  background-color: #ffc857;
+	height: 10vh;
+	display: flex;
+	background-color: #ffc857;
 }
 
 .nav-bar a {
-  text-decoration: none;
-  width: 25%;
-  color: white;
+	text-decoration: none;
+	width: 25%;
+	color: white;
 }
 .public-nav {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
 }
 .private-nav {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
 }

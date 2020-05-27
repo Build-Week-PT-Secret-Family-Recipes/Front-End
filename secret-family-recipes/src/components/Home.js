@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import CardContent from './Cards/CardContent';
+import AddRecipeStepper from './Cards/Recipes/AddRecipe';
+import '../css/Home.css';
 
 function Home() {
   const getUsers = e => {
@@ -52,8 +54,11 @@ function Home() {
   const [recipes, setRecipes] = useState(data);
 
   return (
-    <div>
-      <CardContent recipes={recipes}/>
+    <div className="homeContainer">
+      <div className = "homeCardContainer">
+      {/* <CardContent recipes={recipes}/> */}
+      <AddRecipeStepper />
+      </div>
       <button onClick={getRecipes}>Click me</button>
     </div>
   );

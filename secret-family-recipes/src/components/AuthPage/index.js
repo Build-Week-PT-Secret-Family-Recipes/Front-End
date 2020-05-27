@@ -26,7 +26,6 @@ function AuthPage(props) {
   });
 
   const auth = (values, action) => {
-  // console.log({ values, action });
     AxiosWithAuth()
       .post(`auth/${action}`, values)
       .then((res) => {
@@ -53,7 +52,6 @@ function AuthPage(props) {
       initialValues={baseFields}
       validationSchema={loginSchema}
       onSubmit={(values) => auth(values, 'login')}
-      // onSubmit={login}
     >
       {(loginProps) => (
         <AuthForm
@@ -71,7 +69,6 @@ function AuthPage(props) {
       initialValues={{ name: '', ...baseFields }}
       validationSchema={registerSchema}
       onSubmit={(values) => auth(values, 'register')}
-    // onSubmit={register}
     >
       {(regProps) => (
         <AuthForm
