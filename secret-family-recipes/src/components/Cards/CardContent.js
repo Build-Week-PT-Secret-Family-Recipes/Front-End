@@ -5,7 +5,7 @@ import RecipeCard from './Card';
 function CardContent(props) {
 
   return (
-    <div>
+    <div className="cardContainer">
       {props.recipes.map((recipe) => (
       <RecipeCard
        key={recipe.recipe_id}
