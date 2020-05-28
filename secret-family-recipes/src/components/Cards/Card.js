@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
 	Card,
 	CardHeader,
@@ -35,8 +35,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function RecipeCard(props) {
-	const [isOpen, setIsOpen] = useState(false);
-	const toggle = () => setIsOpen(!isOpen);
+	// const [isOpen, setIsOpen] = useState(false);
+	// const toggle = () => setIsOpen(!isOpen);
 	const classes = useStyles();
 
 	return (
