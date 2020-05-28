@@ -1,10 +1,5 @@
 .cardContainer {
-	margin: 2%;
-	border: 2px solid red;
-	max-width: 27%;
-}
-
-.card {
-	flex-direction: column;
-	text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
