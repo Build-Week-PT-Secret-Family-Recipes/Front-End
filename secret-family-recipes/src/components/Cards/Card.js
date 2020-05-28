@@ -26,12 +26,13 @@ const useStyles = makeStyles((theme) => ({
     margin: "1%",
   },
   media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
+    height: 300,
+    width: "auto",
   },
   paper: {
     position: 'absolute',
-    width: 600,
+    overflow: 'scroll',
+    width: 800,
     height: 800,
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
@@ -80,22 +81,27 @@ function RecipeCard(props) {
 
   const cardModal = (
     <div style={modalStyle} className={classes.paper}>
-      <CardMedia
+      <div>
+        <CardMedia
         className={classes.media}
         image='https://via.placeholder.com/150'
         title={recipeDetails.title}
       />
-      <CardHeader className='card' title={recipeDetails.title} />
-      <p>{recipeDetails.source}</p>
+      <CardHeader className='subHeaders' title={recipeDetails.title} />
+      <p className='subHeaders'>{recipeDetails.source}</p>
+      <h2 className='subHeaders'>Ingredients</h2>
       <CardContent>
-        {recipeDetails.ingredients.map((ingredient) => (
+      {recipeDetails.ingredients.map((ingredient) => (
           <div key={ingredient.ingredient_id} className='ingredient'>
-            <div className='quantity'>{ingredient.quantity}</div>
-            <div className='unit'>{ingredient.unit}</div>
-            <div className='detail'>{ingredient.ingredient}</div>
+            <div className="ingredientContainer">
+            <p className='quantity'>{ingredient.quantity}</p>
+            <p className='unit'>{ingredient.unit}</p>
+            <p className='detail'>{ingredient.ingredient}</p>
+            </div>
           </div>
         ))}
-      <div className='instructions'>
+      <h2 className='subHeaders'>Instructions</h2>
+      <div className='instructionsContainer'>
         {recipeDetails.instructions.map((instruction) => (
           <div key={instruction.id} className='instruction'>
             <div className='step-no'>{instruction.step_no}</div>
@@ -104,6 +110,7 @@ function RecipeCard(props) {
         ))}
       </div>
     </CardContent>
+    </div>
     </div>
   );
 
@@ -122,7 +129,7 @@ function RecipeCard(props) {
         image='https://via.placeholder.com/150'
         title={props.recipeData.title}
       />
-      <CardHeader className='card' title={props.recipeData.title} />
+      <CardHeader className='subHeaders' title={props.recipeData.title} />
       <CardContent>
         <p>{props.recipeData.description}</p>
       </CardContent>
