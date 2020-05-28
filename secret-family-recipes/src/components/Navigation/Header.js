@@ -18,6 +18,7 @@ function Header() {
           <h2>Welcome to Secret Family Recipes</h2>
           <section className='links'>
             <a href='/recipes-home'>All Recipes</a>
+            <a href='/addrecipe'>Add a recipe</a>
             <button onClick={logout}>Log Out</button>
           </section>
         </section>
