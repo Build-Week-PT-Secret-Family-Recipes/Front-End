@@ -3,7 +3,7 @@
 > The little cards my grandma wrote the recipes on in her beautiful cursive are getting lost or are hard to read. I need somewhere secure to keep my recipes with me at all times!
 
 
-[TOC]
+# Table of Contents
 ---
 
   - [Table Of Contents](#h1-id%22table-of-contents-51%22table-of-contentsh1)
@@ -31,7 +31,7 @@
 ## Target Audience
 
 - Females 20+
-- Avid cooks and those who loves to cook
+- Avid cooks and those who love to cook
 - Foodies 
 - Community and social groups
 
@@ -75,4 +75,7 @@ This project was done during a build week sprint at [Lambda School](https://lamb
 
 # Get Started With This Repo
 
-**FILL IN BEFORE B WEEK 5TH DAY**
+-[] Create a forked copy of this project.
+-[] Clone your version of the repository in your terminal.
+-[] Download project dependencies by running npm install.
+-[] Start up the app using npm start.
