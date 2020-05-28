@@ -6,7 +6,6 @@
 # Table of Contents
 ---
 
-  - [Table Of Contents](#h1-id%22table-of-contents-51%22table-of-contentsh1)
   - [Proposal](#proposal)
   - [Target Audience](#target-audience)
   - [Features](#features)
@@ -75,6 +74,9 @@ This project was done during a build week sprint at [Lambda School](https://lamb
 # Get Started With This Repo
 
 -[] Create a forked copy of this project.
+
 -[] Clone your version of the repository in your terminal.
+
 -[] Download project dependencies by running npm install.
+
 -[] Start up the app using npm start.
