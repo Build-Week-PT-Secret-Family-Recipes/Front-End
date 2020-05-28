@@ -1,7 +1,6 @@
 import React from 'react';
 import { TextField, FormControl, Button } from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 
 const useStyles = makeStyles((theme) => ({

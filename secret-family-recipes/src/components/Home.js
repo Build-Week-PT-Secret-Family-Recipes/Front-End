@@ -49,10 +49,10 @@ function Home() {
       .get(`/users/${user.id}/recipes`)
       .then((res) => {
         console.log({ userRecipes: res.data });
-        // setUserRecipes(res.data);
-        setUserRecipes(mockRecipes);
-        // setRecipes(res.data);
-        setRecipes(mockRecipes);
+         setUserRecipes(res.data);
+        //setUserRecipes(mockRecipes);
+         setRecipes(res.data);
+        //+setRecipes(mockRecipes);
       })
       .catch((err) => console.log('User Get Err:', err));
   };
