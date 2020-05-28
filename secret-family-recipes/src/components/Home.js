@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useFormik } from 'formik';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import CardContent from './Cards/CardContent';
-// import AddRecipeStepper from './Cards/Recipes/AddRecipe';
 import '../css/Home.css';
 
 function Home() {
@@ -105,7 +104,6 @@ function Home() {
       </form>
       <div>
         <CardContent recipes={recipes} />
-        {/* <AddRecipeStepper /> */}
       </div>
     </>
   );
