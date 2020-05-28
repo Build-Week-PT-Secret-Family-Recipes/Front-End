@@ -22,8 +22,8 @@ const getModalStyle = () => {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '23%',
-    margin: '2%',
+    width: "27%",
+    margin: "1%",
   },
   media: {
     height: 0,
@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
     width: 600,
+    height: 800,
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
