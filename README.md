@@ -73,10 +73,10 @@ This project was done during a build week sprint at [Lambda School](https://lamb
 
 # Get Started With This Repo
 
--[] Create a forked copy of this project.
+- [ ] Create a forked copy of this project.
 
--[] Clone your version of the repository in your terminal.
+- [ ] Clone your version of the repository in your terminal.
 
--[] Download project dependencies by running npm install.
+- [ ] Download project dependencies by running npm install.
 
--[] Start up the app using npm start.
+- [ ] Start up the app using npm start.
