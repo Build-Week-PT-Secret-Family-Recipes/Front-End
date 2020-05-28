@@ -1,12 +1,21 @@
 import React from 'react';
-import { TextField, Button } from '@material-ui/core/';
+import { TextField, Button, useStyles } from '@material-ui/core/';
+import '../../../css/instructionForm.css';
+
+// const useStyles = makeStyles(theme => ({
+//   formControl: {
+//     margin: theme.spacing(1),
+//     minWidth: 120
+//   },
+//   selectEmpty: {
+//     marginTop: theme.spacing(2)
+//   }
+// }));
 
 function AddInstructions(props) {
-  
-  return (
 
+  return (
 		<>
-			<div className='instructionFormInputs'>
       <TextField
 					id='stepNo'
 					label='stepNo'
@@ -18,7 +27,6 @@ function AddInstructions(props) {
             readOnly: true,
           }}
 				/>
-
 				<TextField
 					id='instructions'
 					label='instructions'
@@ -33,8 +41,7 @@ function AddInstructions(props) {
 					onClick={props.onButtonClick}>
 					Add
 				</Button>
-			</div>
-		</>
+				</>
 	);
 }
 

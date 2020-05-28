@@ -6,11 +6,8 @@ import Select from '@material-ui/core/Select';
 
 const useStyles = makeStyles((theme) => ({
 	formControl: {
-		margin: theme.spacing(1),
-		minWidth: 120,
-	},
-	selectEmpty: {
-		marginTop: theme.spacing(2),
+		display: "inline-block",
+		alignItems: "center",
 	},
 }));
 
@@ -19,11 +16,12 @@ function AddIngredients(props) {
 
 	return (
 		<>
-			<div className='recipeFormInputs'>
+			<FormControl variant='outlined' className={classes.formControl}>
 				<TextField
 					id='quantity'
 					label='quantity'
 					type='number'
+					placeholder=''
           variant='outlined'
           value={props.values.quantity}
 					onChange={props.handleChange('quantity')}
@@ -31,8 +29,6 @@ function AddIngredients(props) {
 						shrink: true,
 					}}
 				/>
-				<FormControl variant='outlined' className={classes.formControl}>
-					<InputLabel htmlFor='category-select-outlined'>Units</InputLabel>
 					<Select
 						native
 						value={props.values.units}
@@ -49,13 +45,12 @@ function AddIngredients(props) {
 							</option>
 						))}
 					</Select>
-				</FormControl>
-				<TextField
+					<TextField
 					placeholder='Enter your description'
+					id='description'
 					label='description'
 					onChange={props.handleChange('description')}
 					defaultValue={props.values.description}
-					margin='normal'
 					variant='outlined'
 				/>
 				<Button
@@ -64,7 +59,7 @@ function AddIngredients(props) {
 					onClick={props.onButtonClick}>
 					Add
 				</Button>
-			</div>
+				</FormControl>
 		</>
 	);
 }
