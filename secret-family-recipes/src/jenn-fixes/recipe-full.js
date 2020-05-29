@@ -9,8 +9,6 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import '../../css/Card.css';
 
-import AxiosWithAuth from '../../utils/AxiosWithAuth';
-
 const useStyles = makeStyles(theme => ({
   root: {
     width: '23%',
@@ -22,32 +20,10 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function RecipeCard(props) {
+function FullRecipe(props) {
   // const [isOpen, setIsOpen] = useState(false);
   // const toggle = () => setIsOpen(!isOpen);
   const classes = useStyles();
-  const deleteRecipe = e => {
-    e.preventDefault();
-    console.log(props.recipeData.recipe_id);
-    AxiosWithAuth()
-      .delete(`recipes/${props.recipeData.recipe_id}`)
-      .then(res => console.log(res.data))
-      .catch(err => console.log('Delete Error: ', err));
-  };
-  const getRecipes = e => {
-    e.preventDefault();
-    AxiosWithAuth()
-      .get('/recipes')
-      .then(res => console.log(res.data))
-      .catch(err => console.log('Get Recipe Error is:', err));
-  };
-  const getUsers = e => {
-    e.preventDefault();
-    AxiosWithAuth()
-      .get('/users')
-      .then(res => console.log(res))
-      .catch(err => console.log('User Get Err:', err));
-  };
 
   return (
     <Card className={classes.root} variant='outlined'>
@@ -63,10 +39,8 @@ function RecipeCard(props) {
         </Typography>
       </CardContent>
       <p>{props.recipeData.category_name}</p>
-      <button className='delete-recipe' onClick={deleteRecipe}>
-        Delete Recipe
-      </button>
+      <button className='view-recipe'>Read Full Recipe</button>
     </Card>
   );
 }
-export default RecipeCard;
+export default FullRecipe;
