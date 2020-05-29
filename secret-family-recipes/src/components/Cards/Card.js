@@ -62,7 +62,7 @@ function RecipeCard(props) {
           {props.recipeData.description}
         </Typography>
       </CardContent>
-      <p>{props.recipeData.category_name}</p>
+      <h4>{props.recipeData.category_name}</h4>
       <button className='delete-recipe' onClick={deleteRecipe}>
         Delete Recipe
       </button>
