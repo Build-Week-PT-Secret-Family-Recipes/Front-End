@@ -7,21 +7,43 @@ import './App.css';
 
 import PrivateRoute from './components/Navigation/PrivateRoute';
 import Home from './components/Home';
+import AddRecipeStepper from './components/Cards/Recipes/AddRecipe';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-      <div className='nav-container'>
+      <div className='App'>
+        <div className='nav-container'>
           <Header />
           <img src={logoSmall} alt='Logo' />
         </div>
-        <div className="routes">
+        <div className='routes'>
           <Switch>
-            <Route path={`${process.env.PUBLIC_URL}/login`} component={AuthPage} />
-            <Route path={`${process.env.PUBLIC_URL}/register`} component={AuthPage} />
-            <Route exact path={`${process.env.PUBLIC_URL}/`} component={AuthPage} />
-            <PrivateRoute path={`${process.env.PUBLIC_URL}/recipes-home`} component={Home} />
+            <Route
+              path={`${process.env.PUBLIC_URL}/login`}
+              component={AuthPage}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/register`}
+              component={AuthPage}
+            />
+            <Route
+              exact
+              path={`${process.env.PUBLIC_URL}/`}
+              component={AuthPage}
+            />
+            <PrivateRoute
+              path={`${process.env.PUBLIC_URL}/recipes-home`}
+              component={Home}
+            />
+            <PrivateRoute
+              path={`${process.env.PUBLIC_URL}/recipes-home`}
+              component={Home}
+            />
+            <PrivateRoute
+              path={`${process.env.PUBLIC_URL}/recipes-add`}
+              component={AddRecipeStepper}
+            />
           </Switch>
         </div>
       </div>
