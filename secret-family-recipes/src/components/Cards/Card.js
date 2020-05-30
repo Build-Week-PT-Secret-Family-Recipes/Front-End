@@ -63,6 +63,9 @@ function RecipeCard(props) {
         </Typography>
       </CardContent>
       <h4>{props.recipeData.category_name}</h4>
+      <button className='view-recipe' onClick={deleteRecipe}>
+        View Recipe
+      </button>
       <button className='delete-recipe' onClick={deleteRecipe}>
         Delete Recipe
       </button>
