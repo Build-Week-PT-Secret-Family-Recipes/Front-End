@@ -8,6 +8,7 @@ import './App.css';
 import PrivateRoute from './components/Navigation/PrivateRoute';
 import Home from './components/Home';
 import AddRecipeStepper from './components/Cards/Recipes/AddRecipe';
+import FullRecipe from './jenn-fixes/recipe-full';
 
 function App() {
   return (
@@ -43,6 +44,10 @@ function App() {
             <PrivateRoute
               path={`${process.env.PUBLIC_URL}/recipes-add`}
               component={AddRecipeStepper}
+            />
+            <PrivateRoute
+              path={`${process.env.PUBLIC_URL}/add-recipe`}
+              component={FullRecipe}
             />
           </Switch>
         </div>

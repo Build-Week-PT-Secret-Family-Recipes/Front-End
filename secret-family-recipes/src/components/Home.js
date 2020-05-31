@@ -5,7 +5,7 @@ import AxiosWithAuth from '../utils/AxiosWithAuth';
 import CardContent from './Cards/CardContent';
 // import AddRecipeStepper from './Cards/Recipes/AddRecipe';
 import '../css/Home.css';
-
+import FullRecipe from '../jenn-fixes/recipe-full';
 function Home() {
   const user = {
     id: 1,
@@ -79,7 +79,7 @@ function Home() {
 
   const goToAddRecipe = e => {
     e.preventDefault();
-    history.push('/recipes-add');
+    history.push('/add-recipe');
   };
 
   // Get User Recipes on load
