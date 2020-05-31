@@ -13,35 +13,35 @@ function Home() {
   };
 
   // Mock API call for recipes
-  //   const mockRecipes = [
-  //     {
-  //       recipe_id: 1,
-  //       user_name: 'abc',
-  //       category_name: 'Lunch',
-  //       title: 'Fried Chicken',
-  //       source: 'Grandma',
-  //       description: 'Nice Taste',
-  //       image_link: null,
-  //     },
-  //     {
-  //       recipe_id: 2,
-  //       user_name: 'abc',
-  //       category_name: 'Lunch',
-  //       title: "Mom's Best Chicken",
-  //       source: 'Momma',
-  //       description: 'Sweet BBQ Chicken',
-  //       image_link: null,
-  //     },
-  //     {
-  //       recipe_id: 3,
-  //       user_name: 'abc',
-  //       category_name: 'Dinner',
-  //       title: 'Italian Sausage Meat Balls',
-  //       source: 'Grandma',
-  //       description: 'Delicious with Garlic Bread',
-  //       image_link: null,
-  //     },
-  //   ];
+  const mockRecipes = [
+    {
+      recipe_id: 1,
+      user_name: 'abc',
+      category_name: 'Lunch',
+      title: 'Fried Chicken',
+      source: 'Grandma',
+      description: 'Nice Taste',
+      image_link: null,
+    },
+    {
+      recipe_id: 2,
+      user_name: 'abc',
+      category_name: 'Lunch',
+      title: "Mom's Best Chicken",
+      source: 'Momma',
+      description: 'Sweet BBQ Chicken',
+      image_link: null,
+    },
+    {
+      recipe_id: 3,
+      user_name: 'abc',
+      category_name: 'Dinner',
+      title: 'Italian Sausage Meat Balls',
+      source: 'Grandma',
+      description: 'Delicious with Garlic Bread',
+      image_link: null,
+    },
+  ];
 
   const [userRecipes, setUserRecipes] = useState([]);
   const [recipes, setRecipes] = useState([]);
@@ -80,6 +80,10 @@ function Home() {
   const goToAddRecipe = e => {
     e.preventDefault();
     history.push('/add-recipe');
+    // AxiosWithAuth()
+    //   .get(`/ingredients`)
+    //   .then(res => console.log(res))
+    //   .catch(err => console.log('ing err is:', err));
   };
 
   // Get User Recipes on load

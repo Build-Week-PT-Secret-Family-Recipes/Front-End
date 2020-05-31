@@ -20,19 +20,18 @@ function AuthPage(props) {
 
   const registerSchema = yup.object().shape({
     ...baseSchemaFields,
-    name: yup
-      .string()
-      .required('You must include your name.'),
+    name: yup.string().required('You must include your name.'),
   });
 
   const auth = (values, action) => {
     AxiosWithAuth()
       .post(`auth/${action}`, values)
-      .then((res) => {
+      .then(res => {
+        console.log(res.data);
         localStorage.setItem('token', res.data.token);
         props.history.push('/recipes-home');
       })
-      .catch((err) => {
+      .catch(err => {
         console.log('Err is: ', err);
       });
   };
@@ -51,12 +50,12 @@ function AuthPage(props) {
     <Formik
       initialValues={baseFields}
       validationSchema={loginSchema}
-      onSubmit={(values) => auth(values, 'login')}
+      onSubmit={values => auth(values, 'login')}
     >
-      {(loginProps) => (
+      {loginProps => (
         <AuthForm
-          action="login"
-          buttonLabel="Login"
+          action='login'
+          buttonLabel='Login'
           fieldTypes={baseFieldTypes}
           {...loginProps}
         />
@@ -68,12 +67,12 @@ function AuthPage(props) {
     <Formik
       initialValues={{ name: '', ...baseFields }}
       validationSchema={registerSchema}
-      onSubmit={(values) => auth(values, 'register')}
+      onSubmit={values => auth(values, 'register')}
     >
-      {(regProps) => (
+      {regProps => (
         <AuthForm
-          action="register"
-          buttonLabel="Register"
+          action='register'
+          buttonLabel='Register'
           fieldTypes={{ name: 'text', ...baseFieldTypes }}
           {...regProps}
         />
@@ -82,8 +81,8 @@ function AuthPage(props) {
   );
 
   return (
-  <section className="loginContainer">
-      <div className="loginTabs">
+    <section className='loginContainer'>
+      <div className='loginTabs'>
         <NavTabs
           tabs={[
             {
