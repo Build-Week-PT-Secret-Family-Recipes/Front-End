@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 function FullRecipe(props) {
   const units = [
@@ -77,6 +78,23 @@ function FullRecipe(props) {
     { id: 21, name: 'Paprika' },
     { id: 31, name: 'Steak' },
   ];
+  const cats = [
+    { id: 0, name: 'select one' },
+    { id: 1, name: 'Lunch', description: 'For Your MidDay Meal' },
+    { id: 2, name: 'Dinner', description: 'That Last Meal of the Day' },
+    { id: 3, name: 'Supper', description: 'That Last Meal of the Day' },
+    { id: 4, name: 'Side', description: 'Add On To Any Meal' },
+    { id: 5, name: 'Main', description: 'The Major Part of the Meal' },
+    {
+      id: 6,
+      name: 'Drink',
+      description: 'Something refreshing for Your Meal or Any Time',
+    },
+    { id: 7, name: 'Dessert', description: 'A treat, sweet or savory' },
+    { id: 8, name: 'Bread', description: 'Loaves, Rolls, and everything else' },
+    { id: 9, name: 'Soups', description: 'Loaves, Rolls, and everything else' },
+  ];
+
   const InitialAddState = {
     category_id: '',
     title: '',
@@ -131,16 +149,26 @@ function FullRecipe(props) {
 
     console.log('ingredient is:', ingredients);
   };
-  // const AddRecipeButton = {
-  //   setValues({
-  //     ...values,
-  //     step,
-  //     ingredients,
-  //   })
-  // }
+  const AddRecipeButton = e => {
+    e.preventDefault();
+    setValues({
+      ...values,
+      instructions: { ...step },
+      ingredients: { ...ingredients },
+    });
+    console.log(values);
+    AxiosWithAuth()
+      .post(`/recipes`, values)
+      .then(res => console.log(res))
+      .catch(err => console.log('Recipe Add Error is'));
+    // .get(`/categories`)
+    // .then(res => console.log(res))
+    // .catch(err => console.log('error x is', err));
+  };
+
   return (
     <section className='fullrecipe'>
-      <form>
+      <form onSubmit={AddRecipeButton}>
         <label> Title: </label>
         <input
           onChange={handleChange}
@@ -150,11 +178,15 @@ function FullRecipe(props) {
         />
         <br />
         <label> Category: </label>
-        <input
-          onChange={handleChange}
-          name='category_id'
-          value={values.category_id}
-        />
+        <select onChange={handleChange} name='category_id'>
+          {cats.map(item => {
+            return (
+              <option value={item.id} key={item.id}>
+                {item.name}
+              </option>
+            );
+          })}
+        </select>
         <br />
         <label>Source: </label>
         <input
