@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AppBar, TextField, FormControl } from '@material-ui/core/';
-import * as yup from 'yup';
+// import * as yup from 'yup';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
@@ -64,29 +64,29 @@ export default function RecipeForm() {
     },
   ];
 
-  const recipeSchema = {
-    catergory: yup
-      .string('You must choose a category.')
-      .max(120, 'Your catergory name is too long.')
-      .required('Please choose a category.'),
-    title: yup
-      .string('You must have a name for your recipe.')
-      .max(120, 'Your recipe name is too long')
-      .required('A recipe name is required.'),
-    source: yup
-      .string('Who made this?')
-      .max(120, 'The source name is too long.'),
-    description: yup
-      .string('You must enter a description.')
-      .max(250, 'Your description is too long.')
-      .required('A description is required.'),
-    image_link: yup
-      .string()
-      .url(
-        'Please enter a valid URL.',
-        /[(http(s)?):(www)?a-zA-Z0-9@:%._~#=]{2,256}[a-z]{2,6}\b([-a-zA-Z0-9@:%_.~#?&//=]*)/gi
-      ),
-  };
+  // const recipeSchema = {
+  //   catergory: yup
+  //     .string('You must choose a category.')
+  //     .max(120, 'Your catergory name is too long.')
+  //     .required('Please choose a category.'),
+  //   title: yup
+  //     .string('You must have a name for your recipe.')
+  //     .max(120, 'Your recipe name is too long')
+  //     .required('A recipe name is required.'),
+  //   source: yup
+  //     .string('Who made this?')
+  //     .max(120, 'The source name is too long.'),
+  //   description: yup
+  //     .string('You must enter a description.')
+  //     .max(250, 'Your description is too long.')
+  //     .required('A description is required.'),
+  //   image_link: yup
+  //     .string()
+  //     .url(
+  //       'Please enter a valid URL.',
+  //       /[(http(s)?):(www)?a-zA-Z0-9@:%._~#=]{2,256}[a-z]{2,6}\b([-a-zA-Z0-9@:%_.~#?&//=]*)/gi
+  //     ),
+  // };
 
   const classes = useStyles();
 

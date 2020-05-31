@@ -10,6 +10,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import '../../css/Card.css';
 
 import AxiosWithAuth from '../../utils/AxiosWithAuth';
+import { useHistory } from 'react-router-dom';
+// import ViewRecipe from '../../jenn-fixes/viewrecipe';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -26,6 +28,7 @@ function RecipeCard(props) {
   // const [isOpen, setIsOpen] = useState(false);
   // const toggle = () => setIsOpen(!isOpen);
   const classes = useStyles();
+  const history = useHistory();
   const deleteRecipe = e => {
     e.preventDefault();
     console.log(props.recipeData.recipe_id);
@@ -34,19 +37,23 @@ function RecipeCard(props) {
       .then(res => console.log(res.data))
       .catch(err => console.log('Delete Error: ', err));
   };
-  const getRecipes = e => {
+  // const getRecipes = e => {
+  //   e.preventDefault();
+  //   AxiosWithAuth()
+  //     .get('/recipes')
+  //     .then(res => console.log(res.data))
+  //     .catch(err => console.log('Get Recipe Error is:', err));
+  // };
+  // const getUsers = e => {
+  //   e.preventDefault();
+  //   AxiosWithAuth()
+  //     .get('/users')
+  //     .then(res => console.log(res))
+  //     .catch(err => console.log('User Get Err:', err));
+  // };
+  const goToView = e => {
     e.preventDefault();
-    AxiosWithAuth()
-      .get('/recipes')
-      .then(res => console.log(res.data))
-      .catch(err => console.log('Get Recipe Error is:', err));
-  };
-  const getUsers = e => {
-    e.preventDefault();
-    AxiosWithAuth()
-      .get('/users')
-      .then(res => console.log(res))
-      .catch(err => console.log('User Get Err:', err));
+    history.push('/view=recipe');
   };
 
   return (
@@ -63,7 +70,7 @@ function RecipeCard(props) {
         </Typography>
       </CardContent>
       <h4>{props.recipeData.category_name}</h4>
-      <button className='view-recipe' onClick={deleteRecipe}>
+      <button className='view-recipe' onClick={goToView}>
         View Recipe
       </button>
       <button className='delete-recipe' onClick={deleteRecipe}>

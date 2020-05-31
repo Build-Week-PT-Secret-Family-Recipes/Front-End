@@ -153,8 +153,8 @@ function FullRecipe(props) {
     e.preventDefault();
     setValues({
       ...values,
-      instructions: { ...step },
-      ingredients: { ...ingredients },
+      instructions: [...step],
+      ingredients: [...ingredients],
     });
     console.log(values);
     AxiosWithAuth()
