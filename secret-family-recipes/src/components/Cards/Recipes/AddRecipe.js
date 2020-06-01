@@ -4,7 +4,7 @@ import { Stepper, Step, StepLabel, Button } from '@material-ui/core/';
 import RecipeForm from './Forms/RecipeForm';
 import IngredientForm from './Forms/IngredientForm';
 import InstructionsForm from './Forms/InstructionsForm';
-import { AddReciepeContext } from '../../../contexts/AddRecipeContext';
+import { AddReciepeContext } from '../../../contexts/AddReciepeContext';
 // import AxiosWithAuth from '../../../utils/AxiosWithAuth';
 
 const useStyles = makeStyles(theme => ({

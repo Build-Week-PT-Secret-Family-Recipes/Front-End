@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
+import { useHistory } from 'react-router-dom';
 
 function FullRecipe(props) {
   const units = [
@@ -94,7 +95,7 @@ function FullRecipe(props) {
     { id: 8, name: 'Bread', description: 'Loaves, Rolls, and everything else' },
     { id: 9, name: 'Soups', description: 'Loaves, Rolls, and everything else' },
   ];
-
+  const history = useHistory();
   const InitialAddState = {
     category_id: '',
     title: '',
@@ -116,22 +117,26 @@ function FullRecipe(props) {
     ],
   };
   const [values, setValues] = useState(InitialAddState);
-  const [step, setStep] = useState({
-    step_no: '',
-    instruction: '',
-  });
-  const [ingredients, setIngredients] = useState({
-    ingredient_id: '',
-    unit_id: '',
-    quantity: '',
-  });
+  const [step, setStep] = useState([
+    {
+      step_no: '',
+      instruction: '',
+    },
+  ]);
+  const [ingredients, setIngredients] = useState([
+    {
+      ingredient_id: '',
+      unit_id: '',
+      quantity: '',
+    },
+  ]);
 
   const handleChange = e => {
     setValues({
       ...values,
       [e.target.name]: e.target.value,
     });
-    console.log(values);
+    // console.log(values);
   };
   const handleChangeStep = e => {
     setStep({
@@ -139,7 +144,7 @@ function FullRecipe(props) {
       [e.target.name]: e.target.value,
     });
 
-    console.log('step is:', step);
+    // console.log('step is:', step);
   };
   const handleIng = e => {
     setIngredients({
@@ -147,23 +152,24 @@ function FullRecipe(props) {
       [e.target.name]: e.target.value,
     });
 
-    console.log('ingredient is:', ingredients);
+    // console.log('ingredient is:', ingredients);
   };
   const AddRecipeButton = e => {
     e.preventDefault();
     setValues({
       ...values,
-      instructions: [...step],
-      ingredients: [...ingredients],
+      instructions: { ...step },
+      ingredients: { ...ingredients },
     });
     console.log(values);
-    AxiosWithAuth()
-      .post(`/recipes`, values)
-      .then(res => console.log(res))
-      .catch(err => console.log('Recipe Add Error is'));
+    // AxiosWithAuth()
+    //   .post(`/recipes`, values)
+    //   .then(res => console.log(res))
+    //   .catch(err => console.log('Recipe Add Error is'));
     // .get(`/categories`)
     // .then(res => console.log(res))
     // .catch(err => console.log('error x is', err));
+    history.push('recipes-home');
   };
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useFormik } from 'formik';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
@@ -43,8 +43,9 @@ function Home() {
   //   },
   // ];
 
-  const [userRecipes, setUserRecipes] = useState([]);
+  const { userRecipes, setUserRecipes } = useContext(RecipeContext);
   const [recipes, setRecipes] = useState([]);
+  console.log(userRecipes);
 
   const getUserRecipes = () => {
     AxiosWithAuth()
@@ -93,28 +94,28 @@ function Home() {
 
   return (
     <div>
-      <RecipeContext.Provider value={{ userRecipes, setUserRecipes }}>
-        <form onSubmit={formik.handleSubmit}>
-          <label htmlFor='searchbar'>
-            <input
-              id='searchbar'
-              name='searchbar'
-              type='text'
-              onChange={formik.handleChange}
-              value={formik.values.searchbar}
-            />
-          </label>
-          <button type='submit'>Search</button>
-          <button type='button' onClick={clearSearch}>
-            Clear
-          </button>
-        </form>
-        <button onClick={goToAddRecipe}>Add Recipe</button>
-        <div>
-          <CardContent recipes={recipes} />
-          {/* <AddRecipeStepper /> */}
-        </div>
-      </RecipeContext.Provider>
+      {/* <RecipeContext.Provider value={{ userRecipes, setUserRecipes }}> */}
+      <form onSubmit={formik.handleSubmit}>
+        <label htmlFor='searchbar'>
+          <input
+            id='searchbar'
+            name='searchbar'
+            type='text'
+            onChange={formik.handleChange}
+            value={formik.values.searchbar}
+          />
+        </label>
+        <button type='submit'>Search</button>
+        <button type='button' onClick={clearSearch}>
+          Clear
+        </button>
+      </form>
+      <button onClick={goToAddRecipe}>Add Recipe</button>
+      <div>
+        <CardContent recipes={recipes} />
+        {/* <AddRecipeStepper /> */}
+      </div>
+      {/* </RecipeContext.Provider> */}
     </div>
   );
 }

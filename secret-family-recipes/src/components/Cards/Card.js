@@ -31,11 +31,12 @@ function RecipeCard(props) {
   const history = useHistory();
   const deleteRecipe = e => {
     e.preventDefault();
-    console.log(props.recipeData.recipe_id);
+    // console.log(props.recipeData.recipe_id);
     AxiosWithAuth()
       .delete(`recipes/${props.recipeData.recipe_id}`)
       .then(res => console.log(res.data))
       .catch(err => console.log('Delete Error: ', err));
+    window.location.reload(false);
   };
   // const getRecipes = e => {
   //   e.preventDefault();
@@ -53,7 +54,7 @@ function RecipeCard(props) {
   // };
   const goToView = e => {
     e.preventDefault();
-    history.push('/view=recipe');
+    history.push(`/view-recipe/?${props.recipeData.recipe_id}`);
   };
 
   return (
