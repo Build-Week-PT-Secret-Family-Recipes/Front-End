@@ -12,6 +12,7 @@ import FullRecipe from './jenn-fixes/recipe-full';
 import ViewRecipe from './jenn-fixes/viewrecipe';
 import { RecipeContext } from './contexts/ReciepeContext';
 import { EditRecipeContext } from './contexts/EditRecipeContext';
+import EditRecipe from './jenn-fixes/editrecipe';
 
 function App() {
   const [userRecipes, setUserRecipes] = useState([]);
@@ -55,6 +56,10 @@ function App() {
                 <PrivateRoute
                   path={`${process.env.PUBLIC_URL}/view-recipe`}
                   component={ViewRecipe}
+                />
+                <PrivateRoute
+                  path={`${process.env.PUBLIC_URL}/edit-recipe`}
+                  component={EditRecipe}
                 />
               </Switch>
             </div>

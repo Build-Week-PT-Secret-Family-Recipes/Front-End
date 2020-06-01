@@ -1,11 +1,12 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { EditRecipeContext } from '../contexts/EditRecipeContext';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
+import { useHistory } from 'react-router-dom';
 
 export default function ViewRecipe() {
   const { currentRec, setCurrentRec } = useContext(EditRecipeContext);
   const curRecId = window.location.toString().split('?')[1];
-
+  const history = useHistory();
   useEffect(() => {
     AxiosWithAuth()
       .get(`/recipes/${curRecId}`)
@@ -40,7 +41,13 @@ export default function ViewRecipe() {
               </section>
             );
           })}
-          <button>Edit</button>
+          <button
+            onClick={e => {
+              history.push(`/edit-recipe/?${curRecId}`);
+            }}
+          >
+            Edit
+          </button>
         </section>
       ) : (
         <h3>Getting Your Info!</h3>
