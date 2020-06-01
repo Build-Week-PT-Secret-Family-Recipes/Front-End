@@ -162,10 +162,10 @@ function FullRecipe(props) {
       ingredients: { ...ingredients },
     });
     console.log(values);
-    // AxiosWithAuth()
-    //   .post(`/recipes`, values)
-    //   .then(res => console.log(res))
-    //   .catch(err => console.log('Recipe Add Error is'));
+    AxiosWithAuth()
+      .post(`/recipes`, values)
+      .then(res => console.log(res))
+      .catch(err => console.log('Recipe Add Error is', err));
     // .get(`/categories`)
     // .then(res => console.log(res))
     // .catch(err => console.log('error x is', err));

@@ -163,11 +163,31 @@ export default function EditRecipe() {
       ...currentRec,
       title: `${values.title}`,
     });
+
     console.log('update recip vale:', currentRec);
     AxiosWithAuth()
-      .put(`/recipes/${curRecId}`)
+      .put(`/recipes/${curRecId}`, {
+        category_id: '2',
+        title: 'More Ymmu Food',
+        source: 'Home',
+        description: 'Jenn Says Hi',
+        image_link: '',
+        ingredients: [
+          {
+            ingredient_id: '2',
+            unit_id: '1',
+            quantity: '9',
+          },
+        ],
+        instructions: [
+          {
+            step_no: '12',
+            instruction: 'Do This',
+          },
+        ],
+      })
       .then(res => console.log(res))
-      .catch(err => console.log('Recipe Add Error is'));
+      .catch(err => console.log('Recipe Add Error is', err));
 
     // history.push('recipes-home');
   };
@@ -181,7 +201,7 @@ export default function EditRecipe() {
       })
       .catch(err => console.log('view recipe err: ', err));
   }, [setCurrentRec, curRecId]);
-  console.log('sent rec is', currentRec);
+
   return (
     <section className='editrec'>
       {currentRec ? (
@@ -316,6 +336,16 @@ export default function EditRecipe() {
             />
             <br />
             <button>Update Recipe</button>
+            <button
+              onClick={e => {
+                AxiosWithAuth()
+                  .get(`/users`)
+                  .then(res => console.log(`users are`, res))
+                  .catch(err => console.log(err));
+              }}
+            >
+              click
+            </button>
           </form>
         </section>
       ) : (
